@@ -2,7 +2,7 @@
     <div class="p-5">
         <div class="flex justify-between items-center">
             <h1 class="text-4xl font-bold">کلاس {{ route.params.class }} </h1>
-            <input type="search" id="search-student" class="border-2 w-8/12 rounded-full p-3 outline-gray-300"
+            <input type="search" id="search-student" class="border-2 w-8/12 rounded-full p-3 outline-gray-300 h-12"
                 placeholder="جست و جو کردن دانش آموز..." v-model="searchValue">
             <button class="btn rounded-full outline-none" @click="showAddStuModal = true">اضافه کردن دانش آموز</button>
         </div>

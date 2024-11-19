@@ -2,7 +2,7 @@
     <div class="p-5">
         <div class="flex justify-between items-ceter">
             <h1 class="text-4xl font-bold">کلاس های درس</h1>
-            <input type="search" class="border-2 w-8/12 rounded-full p-3 outline-gray-300"
+            <input type="search" class="border-2 w-8/12 rounded-full p-3 outline-gray-300 h-12"
                 placeholder="جست و جو کردن کلاس" v-model="searchValue">
             <button class="btn rounded-full outline-none" @click="showAddClass = true">اضافه کردن کلاس درسی</button>
         </div>

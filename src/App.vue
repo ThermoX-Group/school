@@ -20,7 +20,7 @@ export default {
     let allStudents = ref('')
     let allPersonnels = ref([])
     let disciplinaryCase = ref([])
-
+    let allNotics = ref([])
     function getUserDatas() {
       fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/user/-OBaUdCZ2cz21J1umrlj.json`)
         .then(res => res.json())
@@ -52,12 +52,18 @@ export default {
         .then(res => res.json())
         .then(data => allPersonnels.value = Object.entries(data))
     }
+    function getNotics() {
+      fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/notics.json`)
+        .then(res => res.json())
+        .then(data => allNotics.value = Object.entries(data))
+    }
     onMounted(() => {
       getUserDatas()
       getClass()
       getStudents()
       getDisciplinaryCases()
       getPersonnels()
+      getNotics()
     })
 
     provide("getUserDatas", getUserDatas)
@@ -70,6 +76,8 @@ export default {
     provide("allPersonnels", allPersonnels)
     provide("disciplinaryCase", disciplinaryCase)
     provide("getDisciplinaryCases", getDisciplinaryCases)
+    provide("allNotics", allNotics)
+    provide("getNotics", getNotics)
 
     return {
     }

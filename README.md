@@ -1,4 +1,4 @@
-# Payambar Azam Project Version 1.0.0
+# Payambar Azam Project Version 1.1.0
 
 پروژه ی هنرستان کاردانش پیامبر اعظم و فنی حرفه ای شهید یوسفیه
 

@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full fixed top-0 z-10">
         <div class="blur w-full h-full" @click="$emit('closeModal')"></div>
-        <div class="z-10 w-1/2 fixed right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 bg-base-300 rounded-md p-3">
+        <div class="z-10 w-1/2 fixed right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 bg-base-200 rounded-md p-3">
             <div class="flex justify-between items-center text-2xl">
                 <span class="text-3xl cursor-pointer" @click="$emit('closeModal')">x</span>
                 <p>افزودن دانش آموز</p>

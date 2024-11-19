@@ -4,7 +4,7 @@
         <div class="z-10 w-1/2 fixed right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 bg-base-200 rounded-md p-3">
             <div class="flex justify-between items-center text-2xl">
                 <span class="text-3xl cursor-pointer" @click="$emit('closeModal')">x</span>
-                <p>اضافه کردن عضو جدید کادر</p>
+                <p>ویرایش اطلاعات فرد کادر</p>
             </div>
             <div class="grid grid-cols-2 gap-3 mt-3">
                 <div>
@@ -34,40 +34,43 @@
                         placeholder="وظیفه تخصصی  فرد را وارد کنید..." v-model="personnelData.expertiserRule">
                 </div>
             </div>
-            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition border-2 border-base-200 hover:bg-base-200 hover:border-base-300"
-                @click="addPersonnel">{{ btnText }}</button>
+            <button
+                class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition border-2 border-base-200 hover:bg-base-200 hover:border-base-300"
+                @click="editPersonnel">{{ btnText }}</button>
         </div>
     </div>
 </template>
 
 <script>
-import { reactive, ref,inject } from 'vue';
+import { reactive, ref, inject } from 'vue';
 export default {
-    setup(_, { emit }) {
+    props: ['data'],
+    setup(props, { emit }) {
         let personnelData = reactive({
-            name: '',
-            family: '',
-            rule: '',
-            expertiserRule: ''
+            name: props.data[1].name,
+            family: props.data[1].family,
+            rule: props.data[1].rule,
+            expertiserRule: props.data[1].expertiserRule
         })
+
         let getPersonnels = inject('getPersonnels')
 
-        let btnText = ref('اضافه کردن فرد')
+        let btnText = ref('ویرایش کردن اطلاعات')
 
-        function addPersonnel() {
+        function editPersonnel() {
             if (!personnelData.name || !personnelData.family || !personnelData.rule || !personnelData.expertiserRule) {
                 alert('اطلاعات را درست و کامل وارد کنید')
             } else {
-                btnText.value = "درحال اضافه کردن فرد..."
-                fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/personnels.json`, {
-                    method: "POST",
+                btnText.value = "درحال ویرایش کردن اطلاعات فرد..."
+                fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/personnels/${props.data[0]}.json`, {
+                    method: "PUT",
                     headers: {
                         'content-type': 'application/json'
                     },
                     body: JSON.stringify(personnelData)
                 })
                     .then(res => {
-                        btnText.value = "اضافه کردن فرد"
+                        btnText.value = "ویرایش کردن اطلاعات"
                         emit('closeModal')
                         getPersonnels()
                     })
@@ -76,7 +79,7 @@ export default {
         return {
             personnelData,
             btnText,
-            addPersonnel
+            editPersonnel
         }
     }
 }

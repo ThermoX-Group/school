@@ -1,16 +1,23 @@
 <template>
-    <div class="w-28 h-28 fixed bottom-5 right-5" @click="activeBtn = !activeBtn">
+    <div class="w-24 h-24 fixed bottom-5 right-5 z-20" @click="activeBtn = !activeBtn">
         <img src="https://secure.gravatar.com/avatar/3b3c0692f559018fd28befadf7ca88ed?s=256&d=mm&r=g"
-            class="rounded-full w-full h-full z-20 absolute cursor-pointer transition-all border-4 border-white hover:border-base-300 opacity-20 hover:opacity-100"
+            class="rounded-full w-full h-full z-20 absolute cursor-pointer transition-all hover:border-base-300 opacity-20 hover:opacity-100"
             alt="" v-if="!userDatas || !userDatas.img">
         <img :src="userDatas.img"
-            class="rounded-full w-full h-full z-20 absolute cursor-pointer transition-all border-4 border-white hover:border-base-300 opacity-20 hover:opacity-100"
+            class="rounded-full w-full h-full z-20 absolute cursor-pointer transition-all hover:border-base-300 opacity-20 hover:opacity-100"
             alt="">
         <router-link to="/">
             <div class="tooltip tooltip-left h-14 w-14 bg-base-300 rounded-full left-1/2 -translate-x-1/2 absolute transition-all duration-300
             cursor-pointer flex justify-center items-center -top-16" data-tip="صفحه اصلی"
                 :class="{ 'left-1/2': activeBtn, 'left-48': !activeBtn }">
                 <i class="fa-solid fa-home"></i>
+            </div>
+        </router-link>
+        <router-link to="/AddNotic">
+            <div class="tooltip tooltip-top h-14 w-14 bg-base-300 rounded-full right-28 absolute transition-all duration-300
+            cursor-pointer flex justify-center items-center -translate-y-1/2" data-tip="افزودن اطلاعیه"
+                :class="{ 'top-1/2': activeBtn, 'top-48': !activeBtn }">
+                <i class="fa-solid fa-newspaper"></i>
             </div>
         </router-link>
         <router-link to="/personnel">

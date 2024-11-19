@@ -3,10 +3,10 @@
         class="border shadow-md rounded-md p-8 text-center transition overflow-hidden relative hover:shadow-xl hover:-translate-y-0.5">
         <h4>آقای {{ data[1].name }} {{ data[1].family }}</h4>
         <div class="absolute left-3">
-            <div class="tooltip tooltip-right cursor-pointer w-fit" data-tip="حذف">
+            <div class="tooltip tooltip-right cursor-pointer hover:text-red-500 transition" data-tip="حذف">
                 <i class="fa-solid fa-trash ml-3" @click="deleteMode = true"></i>
             </div>
-            <div class="tooltip tooltip-right cursor-pointer w-fit" data-tip="ویرایش اطلاعات">
+            <div class="tooltip tooltip-right cursor-pointer hover:text-gray-500 transition" data-tip="ویرایش اطلاعات">
                 <i class="fa-solid fa-pen cursor-pointer" @click="$emit('openEditModal')"></i>
             </div>
         </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { ref,inject } from 'vue';
+import { ref, inject } from 'vue';
 export default {
     props: ['data'],
     setup(props) {
@@ -29,14 +29,14 @@ export default {
 
         let deleteBtnText = ref('حذف فرد مورد نظر')
         function deletePersonnel() {
-            deleteBtnText.value="درحال حذف کردن..."
-            fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/personnels/${props.data[0]}.json`,{
-                method:"DELETE"
+            deleteBtnText.value = "درحال حذف کردن..."
+            fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/personnels/${props.data[0]}.json`, {
+                method: "DELETE"
             })
-            .then(res=>{
-                // alert(5)
-                getPersonnels()
-            })
+                .then(res => {
+                    // alert(5)
+                    getPersonnels()
+                })
         }
         return {
             deleteMode,
