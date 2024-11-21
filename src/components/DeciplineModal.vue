@@ -21,7 +21,7 @@
                         placeholder="توضیحات را وارد کنید..." v-model="desValue">
                 </div>
             </div>
-            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-200"
+            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition border-2 hover:bg-base-200"
                 @click="addDecipline">{{
                     btnText }}</button>
         </div>
