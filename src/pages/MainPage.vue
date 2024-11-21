@@ -5,7 +5,7 @@
         <div data-aos="fade-up" class="mt-10">
             <h2 class="mb-1">اطلاعیه ها</h2>
             <swiper :slidesPerView="4" :spaceBetween="30" class="mySwiper">
-                <swiper-slide v-for="item in allNotics" :key="item[0]">
+                <swiper-slide v-for="item in lastNotics" :key="item[0]">
                     <NoticCards :data="item"></NoticCards>
                 </swiper-slide>
             </swiper>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { inject, ref } from 'vue';
+import { computed, inject, ref } from 'vue';
 import MainBanner from '../components/MainBanner.vue';
 import NoticCards from '../components/NoticCards.vue';
 
@@ -31,9 +31,11 @@ export default {
     },
     setup() {
         let allNotics = inject('allNotics')
+        let lastNotics = computed(() => allNotics.value.slice(-10))
 
         return {
             allNotics,
+            lastNotics
         }
     }
 }
