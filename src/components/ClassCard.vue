@@ -5,8 +5,12 @@
             <h4> {{ data[1].classBase }} {{ data[1].className }}</h4>
         </router-link>
         <div class="absolute left-3">
-            <i class="fa-solid fa-trash ml-3 cursor-pointer" @click="deleteMode = true"></i>
-            <i class="fa-solid fa-pen cursor-pointer" @click="$emit('openEditModal')"></i>
+            <div class="tooltip tooltip-right" data-tip="حذف کلاس">
+                <i class="fa-solid fa-trash ml-3 cursor-pointer hover:text-red-500 transition" @click="deleteMode = true"></i>
+            </div>
+            <div class="tooltip tooltip-right" data-tip="ویرایش کلاس">
+                <i class="fa-solid fa-pen cursor-pointer hover:text-gray-500 transition" @click="$emit('openEditModal')"></i>
+            </div>
         </div>
         <div class="text-lack flex flex-col absolute w-1/2 right-3 rounded-md transition-all duration-300 px-3 py-1 border"
             :class="{ '-bottom-20': !deleteMode, 'bottom-1': deleteMode }" id="delete-box">

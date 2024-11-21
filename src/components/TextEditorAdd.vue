@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { inject, ref } from 'vue';
 import AlertBox from "./AlertBox.vue"
 import { ClassicEditor, Bold, Essentials, Italic, Mention, Paragraph, Undo, Heading } from 'ckeditor5';
 
@@ -29,6 +29,7 @@ export default {
         AlertBox
     },
     setup() {
+        let getNotics = inject('getNotics')
         const editor = ref(ClassicEditor);
         const editorData = ref('');
 
@@ -75,7 +76,9 @@ export default {
                     body: JSON.stringify({
                         noticData: editorData.value,
                         imgNotic: imgNotic.value,
-                        titleNotic: titleNotic.value
+                        titleNotic: titleNotic.value,
+                        likes: 0,
+                        dislike: 0
                     })
                 })
                     .then(res => {
@@ -83,6 +86,7 @@ export default {
                         alertText.value = "اطلاعیه اضافه شد!"
                         showAlert.value = true
                         alertBg.value = "bg-green-500"
+                        getNotics()
                     })
                     .finally(() => {
                         hideModal()

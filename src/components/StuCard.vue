@@ -5,11 +5,12 @@
             <h4>{{ data[1].nameStu }} {{ data[1].familyStu }}</h4>
         </router-link>
         <div class="absolute left-3">
-            <div class="tooltip tooltip-right cursor-pointer w-fit" data-tip="حذف دانش آموز">
-                <i class="fa-solid fa-trash ml-3" @click="deleteMode = true"></i>
+            <div class="tooltip tooltip-right" data-tip="حذف دانش آموز">
+                <i class="fa-solid fa-trash ml-3 hover:text-red-500 transition-all" @click="deleteMode = true"></i>
             </div>
             <div class="tooltip tooltip-right cursor-pointer w-fit" data-tip="ویرایش اطلاعات دانش آموز">
-                <i class="fa-solid fa-pen cursor-pointer" @click="$emit('openEditModal')"></i>
+                <i class="fa-solid fa-pen cursor-pointer hover:text-gray-500 transition-all"
+                    @click="$emit('openEditModal')"></i>
             </div>
         </div>
         <div class="text-black flex flex-col absolute w-1/2 right-3 rounded-md transition-all duration-300 px-3 py-1 border"
@@ -37,7 +38,7 @@ export default {
                 .then(res => {
                     getStudents()
                 })
-                .catch(err=>console.log(err)
+                .catch(err => console.log(err)
                 )
         }
         return {

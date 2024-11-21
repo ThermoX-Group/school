@@ -7,6 +7,9 @@ import TargetClass from './pages/targetClass.vue'
 import TargetStudent from './pages/TargetStudent.vue'
 import PersonnelSchool from './pages/PersonnelSchool.vue'
 import AddNotic from './pages/AddNotic.vue'
+import EditNotic from './pages/EditNotic.vue'
+import TargetNotic from './pages/TargetNotic.vue'
+import AllNotics from './pages/AllNotics.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -17,6 +20,9 @@ const router = createRouter({
     { path: '/TargetStudent/:stu', component: TargetStudent },
     { path: '/personnel', component: PersonnelSchool },
     { path: '/AddNotic', component: AddNotic },
+    { path: '/EditNotic/:notic', component: EditNotic },
+    { path: '/TargetNotic/:notic', component: TargetNotic },
+    { path: '/AllNotics', component: AllNotics },
   ]
 })
 
