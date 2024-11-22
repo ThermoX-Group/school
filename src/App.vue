@@ -1,34 +1,21 @@
 <template>
   <!-- <router-view class="w-95% absolute left-0"></router-view> -->
   <!-- <SideBarPages></SideBarPages> -->
-  <router-view class="min-h-screen" @click.right.prevent @click.right="showContextFunc($event)" @click="showContext = false"></router-view>
+  <router-view></router-view>
   <ButtonMenu></ButtonMenu>
-  <Transition name="bounce">
-    <ContextMenu v-if="showContext" :style="{ top: pageY + 'px', left: pageX + 'px' }"
-      @closeContext="showContext = false"></ContextMenu>
-  </Transition>
+
 </template>
 
 <script>
 import { onMounted, provide, ref } from 'vue';
 import ButtonMenu from './components/ButtonMenu.vue';
 import SideBarPages from './components/SideBarPages.vue';
-import ContextMenu from './components/ContextMenu.vue';
 export default {
   components: {
     ButtonMenu,
     SideBarPages,
-    ContextMenu
   },
   setup() {
-    let showContext = ref(false)
-    let pageX = ref('')
-    let pageY = ref('')
-    function showContextFunc(event) {
-      showContext.value = true
-      pageX.value = event.clientX
-      pageY.value = event.clientY
-    }
     let userDatas = ref('')
     let allClass = ref('')
     let allStudents = ref('')
@@ -93,36 +80,7 @@ export default {
     provide("allNotics", allNotics)
     provide("getNotics", getNotics)
 
-    return {
-      showContextFunc,
-      showContext,
-      pageX,
-      pageY
-    }
+    return {}
   }
 }
 </script>
-
-<style>
-.bounce-enter-active {
-  animation: bounce-in 0.3s;
-}
-
-.bounce-leave-active {
-  animation: bounce-in 0.3s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1.25);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-</style>
