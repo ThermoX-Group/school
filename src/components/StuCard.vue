@@ -6,7 +6,7 @@
         </router-link>
         <div class="absolute left-3">
             <div class="tooltip tooltip-right" data-tip="حذف دانش آموز">
-                <i class="fa-solid fa-trash ml-3 hover:text-red-500 transition-all" @click="deleteMode = true"></i>
+                <i class="fa-solid fa-trash ml-3 hover:text-red-500 transition-all cursor-pointer" @click="deleteMode = true"></i>
             </div>
             <div class="tooltip tooltip-right cursor-pointer w-fit" data-tip="ویرایش اطلاعات دانش آموز">
                 <i class="fa-solid fa-pen cursor-pointer hover:text-gray-500 transition-all"

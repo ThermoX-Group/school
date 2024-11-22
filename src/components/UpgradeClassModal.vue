@@ -37,6 +37,7 @@ export default {
             return findClass
         })
         function upgradedStuMethod() {
+            btnText.value = "درحال ارتقا..."
             fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/students/${props.data[0]}.json`, {
                 method: "PATCH",
                 headers: {

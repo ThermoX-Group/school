@@ -51,7 +51,7 @@ export default {
             codeStu: '',
             fatherName: '',
             imgStu: '',
-            disciplineStatus: ['empty']
+            isGraduated: false
         })
         let btnText = ref("اضافه کردن دانش آموز")
 

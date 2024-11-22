@@ -53,7 +53,7 @@ export default {
             codeStu: props.data[1].codeStu,
             fatherName: props.data[1].fatherName,
             imgStu: props.data[1].imgStu,
-            disciplineStatus: props.data[1].disciplineStatus
+            isGraduated:props.data[1].isGraduated
         })
         let btnText = ref("ویرایش اطلاعات دانش آموز")
         function editData() {

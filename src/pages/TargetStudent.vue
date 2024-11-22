@@ -5,7 +5,7 @@
             <div>
                 <button class="btn rounded-full" @click="showUpgradeModal = true" v-if="stuNumClass[0] < 12">ارتقا
                     به کلاس بالاتر</button>
-                <button class="btn rounded-full" v-else>فارغ التحصیلی</button>
+                <button class="btn rounded-full" v-else @click="showGadutedModal = true">فارغ التحصیلی</button>
             </div>
         </div>
         <StuData :data="targetStu"></StuData>
@@ -23,6 +23,9 @@
             <UpgradeClassModal v-if="showUpgradeModal" @closeModal="showUpgradeModal = false" :data="targetStu">
             </UpgradeClassModal>
         </Transition>
+        <Transition>
+            <GradutedModal v-if="showGadutedModal" @closeModal="showGadutedModal = false" :data="targetStu"></GradutedModal>
+        </Transition>
     </div>
 </template>
 
@@ -34,13 +37,15 @@ import StuData from '../components/StuData.vue';
 import DeciplineTable from '../components/DeciplineTable.vue';
 import DeleteDesciplineCaseModal from '../components/DeleteDesciplineCaseModal.vue';
 import UpgradeClassModal from '../components/UpgradeClassModal.vue';
+import GradutedModal from '../components/GraduatedModal.vue';
 export default {
     components: {
         StuData,
         DeciplineTable,
         DeciplineModal,
         DeleteDesciplineCaseModal,
-        UpgradeClassModal
+        UpgradeClassModal,
+        GradutedModal
     },
     setup() {
         let route = useRoute()
@@ -62,6 +67,7 @@ export default {
         }
 
         let showUpgradeModal = ref(false)
+        let showGadutedModal = ref(false)
         return {
             targetStu,
             showDeciplineModal,
@@ -69,7 +75,8 @@ export default {
             showDeleteModalHandler,
             targetCase,
             showUpgradeModal,
-            stuNumClass
+            stuNumClass,
+            showGadutedModal
         }
     }
 }
