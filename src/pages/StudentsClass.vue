@@ -11,13 +11,13 @@
                 @openEditModal="openEditModalFunc(item)">
             </ClassCard>
         </transition-group>
+        <Transition>
+            <ClassModal v-if="showAddClass" @closeModal="showAddClass = false"></ClassModal>
+        </Transition>
+        <Transition>
+            <EditClassModal v-if="showEditClass" :data="targetClass" @closeModal="showEditClass = false"></EditClassModal>
+        </Transition>
     </div>
-    <Transition>
-        <ClassModal v-if="showAddClass" @closeModal="showAddClass = false"></ClassModal>
-    </Transition>
-    <Transition>
-        <EditClassModal v-if="showEditClass" :data="targetClass" @closeModal="showEditClass = false"></EditClassModal>
-    </Transition>
 </template>
 
 <script>

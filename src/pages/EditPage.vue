@@ -23,8 +23,8 @@
         </div>
         <button class="btn w-full bg-base-300 rounded-full p-3 mt-5 transition hover:bg-base-400 border-none"
             @click="updateDatas()">{{ btnText }}</button>
+            <p v-if="showText" class="text-center text-3xl mt-5">{{ updateText }}</p>
     </div>
-    <p v-if="showText" class="text-center text-3xl mt-5">{{ updateText }}</p>
 </template>
 
 <script>

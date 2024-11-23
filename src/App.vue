@@ -1,11 +1,11 @@
 <template>
-  <!-- <router-view class="w-95% absolute left-0"></router-view> -->
-  <!-- <SideBarPages></SideBarPages> -->
-  <router-view></router-view>
+  <router-view v-slot="{ Component }">
+    <transition name="scale" mode="out-in">
+      <component :is="Component" class="component" />
+    </transition>
+  </router-view>
   <ButtonMenu></ButtonMenu>
-
 </template>
-
 <script>
 import { onMounted, provide, ref } from 'vue';
 import ButtonMenu from './components/ButtonMenu.vue';
@@ -84,3 +84,25 @@ export default {
   }
 }
 </script>
+<style scoped>
+.scale-enter-active,
+.scale-leave-active {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.scale-enter-from {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.scale-leave-to {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+.scale-enter-to,
+.scale-leave-from {
+  transform: scale(1);
+  opacity: 1;
+}
+</style>
