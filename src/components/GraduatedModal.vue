@@ -39,6 +39,7 @@ export default {
                 .then(res => {
                     emit("closeModal")
                     getStudents()
+                    history.back()
                 })
         }
 

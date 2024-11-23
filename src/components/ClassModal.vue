@@ -20,7 +20,7 @@
                         @keydown.{keyAlias}.enter="addClass()">
                 </div>
             </div>
-            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-200"
+            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-300"
                 @click="addClass">{{
                     btnText }}</button>
         </div>

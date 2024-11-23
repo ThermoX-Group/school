@@ -35,7 +35,7 @@
                 </div>
             </div>
             <button
-                class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition border-2 border-base-200 hover:bg-base-200 hover:border-base-300"
+                class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-300"
                 @click="editPersonnel">{{ btnText }}</button>
         </div>
     </div>

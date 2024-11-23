@@ -33,7 +33,7 @@
                 <input type="text" id="img" class="rounded-full w-full p-3 outline-gray-300"
                     placeholder=" عکس دانش آموز  را وارد کنید..." v-model="studentDatas.imgStu">
             </div>
-            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-200"
+            <button class="w-full bg-base-100 mt-5 rounded-full p-3 cursor-pointer transition hover:bg-base-300"
                 @click="addStudent()">{{ btnText }}</button>
         </div>
     </div>
