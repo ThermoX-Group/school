@@ -18,6 +18,9 @@
             <li>
                 <h4 class="inline-block text-gray-600">کد ملی دانش آموز : </h4> {{ formatingCodeStu }}
             </li>
+            <li>
+                <h4 class="inline-block text-gray-600">کلاس دانش آموز : </h4> {{ data[1].classStu }}
+            </li>
         </ul>
     </div>
 </template>

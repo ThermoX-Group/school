@@ -17,25 +17,28 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { inject, ref } from 'vue';
 
 export default {
     props: ["data"],
     setup(props,{emit}) {
         let btnText = ref("بله")
-        let gradutedStatus = ref(props.data[1].isGraduted)
+        let isGraduated = ref(props.data[1].isGraduated)
+        let getStudents=inject('getStudents')
+
         function graduatedFunc() {
-            gradutedStatus.value = true
+            isGraduated.value = true
             btnText.value = "درحال فارغ التحصیل کردن..."
             fetch(`https://payambar-azam-a7b19-default-rtdb.firebaseio.com/students/${props.data[0]}.json`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json"
                 },
-                body: JSON.stringify({ gradutedStatus: gradutedStatus.value })
+                body: JSON.stringify({ isGraduated: isGraduated.value })
             })
                 .then(res => {
                     emit("closeModal")
+                    getStudents()
                 })
         }
 

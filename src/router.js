@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from './pages/MainPage.vue'
 import EditPage from './pages/EditPage.vue'
 import StudentsClass from './pages/StudentsClass.vue'
-import TargetClass from './pages/targetClass.vue'
+import StudentsPage from './pages/StudentsPage.vue'
 import TargetStudent from './pages/TargetStudent.vue'
 import PersonnelSchool from './pages/PersonnelSchool.vue'
 import AddNotic from './pages/AddNotic.vue'
@@ -16,7 +16,7 @@ const router = createRouter({
     { path: '/', component: MainPage },
     { path: '/editpage', component: EditPage },
     { path: '/studentsclass', component: StudentsClass },
-    { path: '/TargetClass/:class', component: TargetClass },
+    { path: '/StudentsPage/:class', component: StudentsPage },
     { path: '/TargetStudent/:stu', component: TargetStudent },
     { path: '/personnel', component: PersonnelSchool },
     { path: '/AddNotic', component: AddNotic },

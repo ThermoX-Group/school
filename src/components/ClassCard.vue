@@ -1,7 +1,7 @@
 <template>
     <div
         class="border shadow-md rounded-md p-8 text-center transition overflow-hidden relative hover:shadow-xl hover:-translate-y-0.5">
-        <router-link :to='`/targetClass/${data[1].classBase + " " + data[1].className}`'>
+        <router-link :to='`/StudentsPage/${data[1].classBase + " " + data[1].className}`'>
             <h4> {{ data[1].classBase }} {{ data[1].className }}</h4>
         </router-link>
         <div class="absolute left-3">

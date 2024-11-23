@@ -18,7 +18,7 @@ export default {
   setup() {
     let userDatas = ref('')
     let allClass = ref('')
-    let allStudents = ref('')
+    let allStudents = ref([])
     let allPersonnels = ref([])
     let disciplinaryCase = ref([])
     let allNotics = ref([])
