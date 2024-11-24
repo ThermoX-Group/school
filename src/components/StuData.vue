@@ -4,7 +4,7 @@
             v-if="!data[1].imgStu">
             <p>دانش آموز عکس ندارد!</p>
         </div>
-        <img :src=data[1].imgStu :alt=data[1].nameStu class="w-1/4 h-520 rounded-3xl" v-else>
+        <img :src=data[1].imgStu :alt=data[1].nameStu class="w-2/6 h-520 rounded-3xl" v-else>
         <ul class="absolute left-1/2 -translate-x-1/2 text-2xl leading-9">
             <li>
                 <h4 class="inline-block text-gray-600">نام دانش آموز : </h4> {{ data[1].nameStu }}
