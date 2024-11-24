@@ -1,5 +1,6 @@
 <template>
     <div class="p-5">
+        <Teleport to="title">PayambarAzam | اطلاعیه ها</Teleport>
         <div class="flex justify-between mb-2">
             <h1 class="font-bold">اطلاعیه ها</h1>
             <input type="search" id="search-notic"

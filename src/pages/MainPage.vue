@@ -1,5 +1,6 @@
 <template>
     <div class="p-5 pb-0 overflow-hidden relative">
+        <Teleport to="title">PayambarAzam | صفحه اصلی</Teleport>
         <h1 class="text-5xl font-bold">صفحه اصلی</h1>
         <MainBanner></MainBanner>
         <div data-aos="fade-up" class="mt-10">

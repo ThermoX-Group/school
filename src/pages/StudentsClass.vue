@@ -1,5 +1,6 @@
 <template>
     <div class="p-5">
+        <Teleport to="title">PayambarAzam | کلاس های درس</Teleport>
         <div class="flex justify-between items-ceter">
             <h1 class="text-4xl font-bold">کلاس های درس</h1>
             <input type="search" class="border-2 w-8/12 rounded-full p-3 outline-gray-300 h-12"

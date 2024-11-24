@@ -1,5 +1,6 @@
 <template>
     <div class="p-5" v-if="targetStu">
+        <Teleport to="title">PayambarAzam | دانش آموز {{ targetStu[1].nameStu }} {{ targetStu[1].familyStu }}</Teleport>
         <div class="flex justify-between items-center">
             <h1 class="text-4xl font-bold">دانش آموز "{{ targetStu[1].nameStu }} {{ targetStu[1].familyStu }}"</h1>
             <div>
@@ -24,7 +25,8 @@
             </UpgradeClassModal>
         </Transition>
         <Transition>
-            <GradutedModal v-if="showGadutedModal" @closeModal="showGadutedModal = false" :data="targetStu"></GradutedModal>
+            <GradutedModal v-if="showGadutedModal" @closeModal="showGadutedModal = false" :data="targetStu">
+            </GradutedModal>
         </Transition>
     </div>
 </template>

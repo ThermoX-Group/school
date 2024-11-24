@@ -1,5 +1,6 @@
 <template>
     <div class="p-5">
+        <Teleport to="title">PayambarAzam | فهرست دانش آموزان</Teleport>
         <div class="flex justify-between items-center">
             <h1 class="font-bold" v-if="route.params.class == 'all'">تمامی دانش آموزان</h1>
             <h1 class="font-bold" v-else-if="route.params.class=='graduated'">فارغ التحصیل شدگان</h1>
