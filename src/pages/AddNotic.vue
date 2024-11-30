@@ -13,10 +13,5 @@ export default {
     components: {
         TextEditorAdd
     },
-    setup() {
-        return {
-
-        }
-    }
 }
 </script>

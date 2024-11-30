@@ -3,7 +3,7 @@
         <div class="blur w-full h-full" @click="$emit('closeModal')"></div>
         <div class="z-10 w-1/3 fixed right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 bg-base-200 rounded-md p-3">
             <div class="text-2xl">
-                <p>حذف مورد انضباطی</p>
+                <p>حذف اطلاعیه</p>
             </div>
             <p class="my-5">آیا میخواهید که این اطلاعیه را حذف کنید؟</p>
             <div class="grid grid-cols-2 gap-5">
