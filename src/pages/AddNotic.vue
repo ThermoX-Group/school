@@ -1,6 +1,7 @@
 <template>
     <div class="p-5">
-        <Teleport to="title">PayambarAzam | افزودن اطلاعیه</Teleport>
+        <Teleport to="title">| افزودن اطلاعیه </Teleport>
+
         <h1 class="text-4xl font-bold">افزودن اطلاعیه</h1>
         <TextEditorAdd></TextEditorAdd>
     </div>

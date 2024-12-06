@@ -1,6 +1,7 @@
 <template>
     <div class="p-5">
-        <Teleport to="title">PayambarAzam | پرسونل مدرسه</Teleport>
+        <Teleport to="title">| پرسنل مدرسه </Teleport>
+
         <div class="flex justify-between items-center">
             <h1 class="text-4xl font-bold">پرسنل مدرسه</h1>
             <button class="btn rounded-full" @click="showAddPersonnel = true">اضافه کردن فرد جدید</button>

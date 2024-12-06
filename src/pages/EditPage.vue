@@ -1,6 +1,6 @@
 <template>
     <div class="p-5">
-        <Teleport to="title">PayambarAzam | ویرایش پروفایل</Teleport>
+        <Teleport to="title">| ویرایش پروفایل </Teleport>
         <h1 class="text-4xl font-bold">ویرایش پروفایل کاربر</h1>
         <div class="grid grid-cols-3 mt-5 gap-5">
             <div>

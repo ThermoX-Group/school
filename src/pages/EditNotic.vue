@@ -1,6 +1,7 @@
 <template>
     <div class="p-5">
-        <Teleport to="title">Payambar Azam | ویرایش اطلاعیه </Teleport>
+        <Teleport to="title">| ویرایش اطلاعیه </Teleport>
+
         <h1 class="font-bold text-4xl">ویرایش اطلاعیه</h1>
         <TextEditorEdit :data="findNotic"></TextEditorEdit>
     </div>

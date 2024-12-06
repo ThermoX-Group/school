@@ -1,6 +1,6 @@
 <template>
     <div class="p-5" v-if="findNotic">
-        <Teleport to="title">PayambarAzam | اطلاعیه {{ findNotic[1].titleNotic }}</Teleport>
+        <Teleport to="title"> | اطلاعیه {{ findNotic[1].titleNotic }}</Teleport>
         <div class="flex items-cente justify-between">
             <div>
                 <h1 class="font-bold">{{ findNotic[1].titleNotic }}</h1>
