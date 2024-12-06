@@ -6,7 +6,8 @@
             <div>
                 <button class="btn rounded-full" @click="showUpgradeModal = true" v-if="stuNumClass[0] < 12">ارتقا
                     به کلاس بالاتر</button>
-                <button class="btn rounded-full" v-else @click="showGadutedModal = true">فارغ التحصیلی</button>
+                <button class="btn rounded-full" v-else-if="stuNumClass[0] == 12 && !targetStu[1].isGraduated" @click="showGadutedModal = true">فارغ التحصیلی</button>
+                <p v-else>فارغ التحصیل شده</p>
             </div>
         </div>
         <StuData :data="targetStu"></StuData>
